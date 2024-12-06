@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class DB_Manager {
 
     private static final String DB_URL = "jdbc:oracle:thin:@//localhost:1521/XEPDB1";
-    private static final String DB_USER = "inka";
-    private static final String DB_PASSWORD = "testPW";
+    private static final String DB_USER = "USER";
+    private static final String DB_PASSWORD = "PW";
 
     // klappt irgendwie nicht :(
     public static Connection ConnectDB() {
