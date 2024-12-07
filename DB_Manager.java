@@ -8,17 +8,6 @@ public class DB_Manager {
     private static final String DB_USER = "USER";
     private static final String DB_PASSWORD = "PW";
 
-    // klappt irgendwie nicht :(
-    public static Connection ConnectDB() {
-        try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD)) {
-            System.out.println("Verbindung erfolgreich!");
-            return conn;
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-
     public static void AddCustomer(Scanner scanner) {
         System.out.println("Name:");
         String name = scanner.nextLine();
@@ -107,7 +96,6 @@ public class DB_Manager {
                 e.printStackTrace();
             }
 
-            System.out.println("Verbindung erfolgreich!");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -136,7 +124,7 @@ public class DB_Manager {
                     System.out.println("No Customer with the ID found");
                     return;
                 }
-                System.out.printf("Do you really wont to delete the Customers: %s ?", String.join(",", names));
+                System.out.printf("Do you really want to delete the Customers: %s ?", String.join(",", names));
                 System.out.println("[Y]: yes, else: no");
                 String answer = scanner.nextLine();
                 if ("Y".equals(answer) == false) {
@@ -152,6 +140,7 @@ public class DB_Manager {
             try (PreparedStatement sqlQuery = con.prepareStatement(sqlString)) {
                 sqlQuery.setInt(1, id);
                 sqlQuery.executeQuery();
+                System.out.println("User deleted %n");
             } catch (SQLException e) {
                 e.printStackTrace();
 

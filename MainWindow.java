@@ -9,14 +9,14 @@ class QuickStart {
 
     private static void GetUserInput(Scanner scanner) {
         while (true) {
-            System.out.println("\nKundenverwaltung");
-            System.out.println("1. Kunden hinzufügen");
-            System.out.println("2. Kunden anzeigen");
-            System.out.println("3. Kunden aktualisieren");
-            System.out.println("4. Kunden löschen");
-            System.out.println("5. Beenden");
+            System.out.println("\nCustomer options:");
+            System.out.println("1. Add customer");
+            System.out.println("2. Show Customers");
+            System.out.println("3. Edit Customer");
+            System.out.println("4. Delete Customer");
+            System.out.println("5. Quit");
 
-            System.out.print("Wählen Sie eine Option: ");
+            System.out.print("Select an option: ");
 
             int option = scanner.nextInt();
             scanner.nextLine();
